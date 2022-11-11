@@ -35,11 +35,11 @@ int lenghtRec(int num){
     return 1 + lenghtRec(num/10);
 }
 int reverse(int num){
-    return reverseRec(int num,0);
+    return reverseRec(num,0);
 }
 int reverseRec(int num,int revNum){
     int temp;
     if(num <= 0) return revNum;
-    temp = n%10;
-    return reverse(num/10,revNum * 10 + temp)
+    temp = num%10;
+    return reverseRec(num/10,revNum * 10 + temp);
 }
