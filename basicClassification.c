@@ -15,7 +15,11 @@ int isStrong(int num){
     while(n>0){
         temp = n%10;
         sum += factorial(temp);
+<<<<<<< HEAD
         n = n/10;
+=======
+        n =/ 10;
+>>>>>>> README
     }
 
     return sum == num ? 1 :0 ;
