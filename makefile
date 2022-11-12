@@ -1,8 +1,12 @@
-basicClassification.exe: basicClassification.o
-	gcc -o basicClassification.exe basicClassification.o
+
+# files: basicClassification,advancedClassificationLoop,advancedClassificationRecursion
+FILENAME = advancedClassificationRecursion
 	
-basicClassification.o: basicClassification.c
-	gcc -c basicClassification.c -Wall
+$(FILENAME).exe: $(FILENAME).o
+	gcc -o $(FILENAME).exe $(FILENAME).o
+	
+$(FILENAME).o: $(FILENAME).c
+	gcc -c $(FILENAME).c -Wall
 	
 clean:
-	basicClassification.exe basicClassification.o
+	$(FILENAME).exe $(FILENAME).o

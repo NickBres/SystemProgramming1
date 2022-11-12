@@ -1,5 +1,8 @@
 #include "NumClass.h"
-#include <stdio.h>
+
+int main(){
+    return 0;
+}
 
 int isPrime(int num){
     for(int i = 2; i < num; i++){
