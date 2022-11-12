@@ -1,8 +1,9 @@
 
 int ArmstrongRec(int,int);
 int powRec(int,int);
-int lenghtRec(int);
+int lengthRec(int);
 int reverseRec(int,int);
+int reverse(int);
 
 
 int isPalindrome(int num){
@@ -12,7 +13,7 @@ int isPalindrome(int num){
 };
 
 int isArmstrong(int num){
-    int len,sum,temp;
+    int len,sum;
 
     if(num < 0) num *= -1;
 
