@@ -1,4 +1,4 @@
-#include "NumClass.h"
+
 
 
 int isArmstrong(int num){
@@ -14,7 +14,7 @@ int isArmstrong(int num){
         n = n/10;
     }
     return num == sum ? 1 : 0;
-}
+};
 
 int power(int a,int b){
     int res = 1;
@@ -24,7 +24,7 @@ int power(int a,int b){
         b--;
     }
     return res;
-}
+};
 
 int length(int num){
     int len = 0;
@@ -33,12 +33,12 @@ int length(int num){
         num = num/10;
     }
     return len;
-}
+};
 
 int isPalindrome(int num){
     int reversed = reverse(num);
     return reversed == num;
-}
+};
 
 int reverse(int num){
     int reversed = 0,temp;
@@ -48,4 +48,4 @@ int reverse(int num){
         num = num/10;
     }
     return reversed;
-}
+};

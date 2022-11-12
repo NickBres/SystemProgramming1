@@ -1,12 +1,17 @@
 
 # files: basicClassification,advancedClassificationLoop,advancedClassificationRecursion
-FILENAME = advancedClassificationRecursion
-	
-$(FILENAME).exe: $(FILENAME).o
-	gcc -o $(FILENAME).exe $(FILENAME).o
-	
-$(FILENAME).o: $(FILENAME).c
-	gcc -c $(FILENAME).c -Wall
-	
-clean:
-	$(FILENAME).exe $(FILENAME).o
+BASIC = basicClassification
+LOOP = advancedClassificationLoop
+REC = advancedClassificationRecursion
+
+Matala1: main.o $(BASIC).o $(LOOP).o
+	gcc main.o $(BASIC).o $(LOOP).o -o Matala1
+
+main.o: main.c
+	gcc -c main.c -o main.o
+
+$(BASIC).o: $(BASIC).c
+	gcc -c $(BASIC).c -o $(BASIC).o
+
+$(LOOP).o: $(LOOP).c
+	gcc -c $(LOOP).c -o $(LOOP).o

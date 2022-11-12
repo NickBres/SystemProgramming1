@@ -1,15 +1,12 @@
-#include "NumClass.h"
 
-int main(){
-    return 0;
-}
+
 
 int isPrime(int num){
     for(int i = 2; i < num; i++){
         if(num%i == 0) return 0;
     }
     return 1;
-}
+};
 
 int isStrong(int num){
     int sum = 0;
@@ -23,7 +20,7 @@ int isStrong(int num){
     }
 
     return sum == num ? 1 :0 ;
-}
+};
 
 int factorial(int num){
     int fact = 1;
@@ -31,4 +28,4 @@ int factorial(int num){
         fact *= num--;
     }
     return fact;
-}
+};
