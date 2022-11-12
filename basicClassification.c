@@ -1,15 +1,6 @@
 #include "NumClass.h"
 #include <stdio.h>
 
-int main(){
-    printf("%d\n", isStrong(2));
-    printf("%d\n",isStrong(145));
-    printf("%d\n",isStrong(10));
-    
-
-    return 0;
-}
-
 int isPrime(int num){
     for(int i = 2; i < num; i++){
         if(num%i == 0) return 0;
