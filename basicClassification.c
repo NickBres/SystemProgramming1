@@ -1,4 +1,14 @@
-#include <NumClass.h>
+#include "NumClass.h"
+#include <stdio.h>
+
+int main(){
+    printf("%d\n", isStrong(2));
+    printf("%d\n",isStrong(145));
+    printf("%d\n",isStrong(10));
+    
+
+    return 0;
+}
 
 int isPrime(int num){
     for(int i = 2; i < num; i++){
@@ -24,7 +34,7 @@ int isStrong(int num){
 int factorial(int num){
     int fact = 1;
     while(num > 0){
-        fact *= num++;
+        fact *= num--;
     }
     return fact;
 }
