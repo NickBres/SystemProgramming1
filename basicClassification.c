@@ -1,5 +1,5 @@
 
-
+int factorial(int);
 
 int isPrime(int num){
     for(int i = 2; i < num; i++){
@@ -21,7 +21,8 @@ int isStrong(int num){
 
     return sum == num ? 1 :0 ;
 };
-
+/*get positive number
+eturn its factorial*/
 int factorial(int num){
     int fact = 1;
     while(num > 0){

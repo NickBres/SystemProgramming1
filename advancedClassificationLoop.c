@@ -1,5 +1,7 @@
 
-
+int power(int,int);
+int length(int);
+int reverse(int);
 
 int isArmstrong(int num){
     int len,n,sum,temp;
@@ -16,6 +18,13 @@ int isArmstrong(int num){
     return num == sum ? 1 : 0;
 };
 
+int isPalindrome(int num){
+    int reversed = reverse(num);
+    return reversed == num;
+};
+
+/*get two nubers
+returns first number power second*/
 int power(int a,int b){
     int res = 1;
     while (b > 0)
@@ -26,6 +35,8 @@ int power(int a,int b){
     return res;
 };
 
+/*get number
+return its lenght*/
 int length(int num){
     int len = 0;
     while(num>0){
@@ -35,11 +46,9 @@ int length(int num){
     return len;
 };
 
-int isPalindrome(int num){
-    int reversed = reverse(num);
-    return reversed == num;
-};
-
+/*get number
+return it reversed
+123 -> 321*/
 int reverse(int num){
     int reversed = 0,temp;
     while(num > 0){

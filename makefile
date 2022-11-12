@@ -15,3 +15,6 @@ $(BASIC).o: $(BASIC).c
 
 $(LOOP).o: $(LOOP).c
 	gcc -c $(LOOP).c -o $(LOOP).o
+
+clean:
+	rm Matala1 *.o
