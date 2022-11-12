@@ -1,4 +1,3 @@
-
 int ArmstrongRec(int,int);
 int powRec(int,int);
 int lengthRec(int);
