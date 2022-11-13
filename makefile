@@ -23,13 +23,13 @@ loopd: $(BASIC).o $(LOOP).o
 	export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 
 mains: mainl.o $(BASIC).o $(LOOP).o 
-	gcc  mainl.o  $(BASIC).o $(LOOP).o -o mains.exe
+	gcc  mainl.o  $(BASIC).o $(LOOP).o -o mains
 
 maindloop: mainl.o $(BASIC).o $(LOOP).o 
-	gcc  mainl.o  $(BASIC).o $(LOOP).o -o maindloop.exe
+	gcc  mainl.o  $(BASIC).o $(LOOP).o -o maindloop
 
 maindrec: mainr.o $(BASIC).o $(REC).o 
-	gcc  mainr.o  $(BASIC).o $(REC).o -o maindrec.exe
+	gcc  mainr.o  $(BASIC).o $(REC).o -o maindrec
 
 mainl.o: main.c
 	gcc -Wall -c main.c -L. -lclassloops -o mainl.o
