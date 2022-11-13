@@ -27,7 +27,7 @@ int main(){
 
    
 
-    printf("The Strong nums are: ");
+    printf("The Strong numbers are: ");
     for(i = num1;i <= num2;i++){
         if(isStrong(i)) printf("%d ",i);
     }
