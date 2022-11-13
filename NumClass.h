@@ -1,3 +1,6 @@
+#define TRUE 1
+#define FALSE 0
+
 #ifndef MAIN_H
 #define MAIN_H
 /*

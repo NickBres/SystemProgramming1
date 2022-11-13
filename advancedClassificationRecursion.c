@@ -7,7 +7,7 @@ int reverse(int);
 
 int isPalindrome(int num){
     int reversed = reverse(num);
-    return reversed == num ? 1 : 0;
+    return reversed == num;
     
 };
 
@@ -19,7 +19,7 @@ int isArmstrong(int num){
     len = lengthRec(num);
     sum = ArmstrongRec(num,len);
     
-    return sum == num ? 1 : 0;
+    return sum == num;
 };
 
 /*recursion function

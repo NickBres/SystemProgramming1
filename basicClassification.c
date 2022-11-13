@@ -1,11 +1,12 @@
-
+#define TRUE 1
+#define FALSE 0
 int factorial(int);
 
 int isPrime(int num){
     for(int i = 2; i < num; i++){
-        if(num%i == 0) return 0;
+        if(num%i == 0) return FALSE;
     }
-    return 1;
+    return TRUE;
 };
 
 int isStrong(int num){
@@ -19,7 +20,7 @@ int isStrong(int num){
         n = n/10;
     }
 
-    return sum == num ? 1 :0 ;
+    return sum == num ;
 };
 /*get positive number
 eturn its factorial*/

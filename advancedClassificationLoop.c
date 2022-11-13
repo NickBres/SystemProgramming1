@@ -15,7 +15,7 @@ int isArmstrong(int num){
         sum += temp;
         n = n/10;
     }
-    return num == sum ? 1 : 0;
+    return num == sum;
 };
 
 int isPalindrome(int num){

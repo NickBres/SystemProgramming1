@@ -4,6 +4,8 @@ BASIC = basicClassification
 LOOP = advancedClassificationLoop
 REC = advancedClassificationRecursion
 
+all: loops recursives recursived loopd mains maindloop maindrec
+
 loops: $(BASIC).o $(LOOP).o
 	ar rc libclassloops.a $(BASIC).o $(LOOP).o
 	ranlib libclassloops.a
@@ -17,8 +19,8 @@ recursived: $(BASIC).o $(REC).o
 	export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 
 loopd: $(BASIC).o $(LOOP).o
-	#gcc -shared -Wall $(BASIC).o $(LOOP).o -o libclassloops.so
-	#export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+	gcc -shared -Wall $(BASIC).o $(LOOP).o -o libclassloops.so
+	export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 
 mains: mainl.o $(BASIC).o $(LOOP).o 
 	gcc  mainl.o  $(BASIC).o $(LOOP).o -o mains.exe
@@ -29,12 +31,10 @@ maindloop: mainl.o $(BASIC).o $(LOOP).o
 maindrec: mainr.o $(BASIC).o $(REC).o 
 	gcc  mainr.o  $(BASIC).o $(REC).o -o maindrec.exe
 
-all: loops recursives recursived loopd mains maindloop maindrec
-
 mainl.o: main.c
 	gcc -Wall -c main.c -L. -lclassloops -o mainl.o
 mainr.o: main.c
-	gcc -Wall -c main.c -L. -libclassrec -o mainr.o	
+	gcc -Wall -c main.c -L. -lclassrec -o mainr.o	
 
 $(BASIC).o: $(BASIC).c
 	gcc -Wall -c $(BASIC).c -o $(BASIC).o
