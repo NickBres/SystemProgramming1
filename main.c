@@ -19,7 +19,7 @@ int main(){
     }
     printf("\n");
 
-    printf("The Prime nums are: ");
+    printf("The Prime numbers are: ");
     for(i = num1;i <= num2;i++){
         if(isPrime(i)) printf("%d ",i);
     }
