@@ -9,29 +9,33 @@ int main(){
     printf("Enter second number: ");
     scanf("%d",&num2);
 
-    printf("Prime nums are: ");
+    printf("The Armstrong numbers are: ");
     for(i = num1;i <= num2;i++){
-        if(isPrime(i)) printf("%d, ",i);
+        if(isArmstrong(i)) printf("%d ",i);
     }
     printf("\n");
 
-    printf("Armstrong nums are: ");
+    printf("The Palindromes are: ");
     for(i = num1;i <= num2;i++){
-        if(isArmstrong(i)) printf("%d, ",i);
+        if(isPalindrome(i)) printf("%d ",i);
     }
     printf("\n");
 
-    printf("Strong nums are: ");
+    printf("The Prime nums are: ");
     for(i = num1;i <= num2;i++){
-        if(isStrong(i)) printf("%d, ",i);
+        if(isPrime(i)) printf("%d ",i);
     }
     printf("\n");
 
-    printf("Palindrome nums are: ");
+   
+
+    printf("The Strong nums are: ");
     for(i = num1;i <= num2;i++){
-        if(isPalindrome(i)) printf("%d, ",i);
+        if(isStrong(i)) printf("%d ",i);
     }
     printf("\n");
+
+    
   
 
 };
