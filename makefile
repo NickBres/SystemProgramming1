@@ -32,9 +32,9 @@ mainr.o: main.c
 
 #-------static libraries-------
 libclassloops.a: $(OBJECTSLOOP)
-	ar rc libclassloops.a $(OBJECTSLOOP) -o $@
+	ar rc $@ $(OBJECTSLOOP) 
 libclassrec.a: $(OBJECTSREC) 
-	ar rc libclassrec.a $(OBJECTSREC)  -o $@
+	ar rc $@ $(OBJECTSREC) 
 #------------------------------
 
 #-------dynamic libraries-------
