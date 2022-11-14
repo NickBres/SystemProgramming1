@@ -1,8 +1,11 @@
-#define TRUE 1
-#define FALSE 0
+
 
 #ifndef MAIN_H
 #define MAIN_H
+
+#define TRUE 1
+#define FALSE 0
+
 /*
 An armstrong number is an n-digit number that is equal
 to the sum of the nth powers of its digits

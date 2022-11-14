@@ -1,51 +1,55 @@
+CC = gcc
+CFLAGS = -Wall -Wextra 
 
-# files: basicClassification,advancedClassificationLoop,advancedClassificationRecursion
-BASIC = basicClassification
-LOOP = advancedClassificationLoop
-REC = advancedClassificationRecursion
+CFILESLOOP = basicClassification.c advancedClassificationLoop.c
+CFILESREC = basicClassification.c advancedClassificationRecursion.c
+OBJECTSLOOP = basicClassification.o advancedClassificationLoop.o
+OBJECTSREC = basicClassification.o advancedClassificationRecursion.o
 
 all: loops recursives recursived loopd mains maindloop maindrec
 
+#-------extraction files-------
+mains: mainl.o $(OBJECTSLOOP) 
+	$(CC)  mainl.o  $(OBJECTSLOOP) -o mains
+maindloop: mainl.o $(OBJECTSLOOP)  
+	$(CC)  mainl.o  $(OBJECTSLOOP) -o maindloop
+maindrec: mainr.o $(OBJECTSREC) 
+	$(CC)  mainr.o  $(OBJECTSREC)  -o maindrec
+#------------------------------
 
-mains: mainl.o $(BASIC).o $(LOOP).o recursives
-	gcc  mainl.o  $(BASIC).o $(LOOP).o -o mains
 
-maindloop: mainl.o $(BASIC).o $(LOOP).o  loopd
-	gcc  mainl.o  $(BASIC).o $(LOOP).o -o maindloop
+#-------main o files-------
+mainl.o: main.c
+	$(CC) $(CFLAGS) -c $^ -L. -lclassloops -o $@
+mainr.o: main.c
+	$(CC) $(CFLAGS) -c $^ -L. -lclassrec -o $@
+#------------------------------
 
-maindrec: mainr.o $(BASIC).o $(REC).o recursived
-	gcc  mainr.o  $(BASIC).o $(REC).o -o maindrec
+#-------other o files-------
+%.o:%.c
+	$(CC) $(CFLAGS) -c $^ -o $@	
+#------------------------------
 
-mainl.o: main.c loops loopd
-	gcc -Wall -c main.c -L. -lclassloops -o mainl.o
-mainr.o: main.c recursives recursived
-	gcc -Wall -c main.c -L. -lclassrec -o mainr.o	
+#-------static libraries-------
+libclassloops.a: $(OBJECTSLOOP)
+	ar rc libclassloops.a $(OBJECTSLOOP) -o $@
+libclassrec.a: $(OBJECTSREC) 
+	ar rc libclassrec.a $(OBJECTSREC)  -o $@
+#------------------------------
 
-loops: $(BASIC).o $(LOOP).o
-	ar rc libclassloops.a $(BASIC).o $(LOOP).o -o libclassloops.a
-	#ranlib libclassloops.a
-
-recursives: $(BASIC).o $(REC).o
-	ar rc libclassrec.a $(BASIC).o $(REC).o -o libclassrec.a
-    	#ranlib libclassrec.a
-
-recursived: $(BASIC).o $(REC).o
-	gcc -shared -Wall $(BASIC).o $(REC).o -o libclassrec.so
+#-------dynamic libraries-------
+libclassrec.so: $(OBJECTSREC) 
+	$(CC) -shared $(CFLAGS) $(OBJECTSREC)  -o $@
 	export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
-
-loopd: $(BASIC).o $(LOOP).o
-	gcc -shared -Wall $(BASIC).o $(LOOP).o -o libclassloops.so
+libclassloops.so: $(OBJECTSLOOP)
+	$(CC) -shared $(CFLAGS) $(OBJECTSLOOP) -o $@
 	export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+#------------------------------
 
-
-$(BASIC).o: $(BASIC).c
-	gcc -Wall -c $(BASIC).c -o $(BASIC).o
-
-$(LOOP).o: $(LOOP).c
-	gcc -Wall -c $(LOOP).c -o $(LOOP).o 
-
-$(REC).o: $(REC).c
-	gcc -Wall -c $(REC).c -o $(REC).o 
+loops: libclassloops.a
+recursives: libclassrec.a
+recursived: libclassrec.so
+loopd: libclassloops.so
 
 clean:
-	rm  *.o *.a *.exe *so
+	rm  *.o *.a *so mains maindloop maindrec

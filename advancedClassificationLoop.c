@@ -1,3 +1,4 @@
+#include "NumClass.h"
 
 int power(int,int);
 int length(int);

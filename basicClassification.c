@@ -1,5 +1,5 @@
-#define TRUE 1
-#define FALSE 0
+#include "NumClass.h"
+
 int factorial(int);
 
 int isPrime(int num){
@@ -23,7 +23,7 @@ int isStrong(int num){
     return sum == num ;
 };
 /*get positive number
-eturn its factorial*/
+return its factorial*/
 int factorial(int num){
     int fact = 1;
     while(num > 0){
