@@ -27,7 +27,7 @@ loops: $(BASIC).o $(LOOP).o
 
 recursives: $(BASIC).o $(REC).o
 	ar rc libclassrec.a $(BASIC).o $(REC).o -o libclassrec.a
-	#ranlib libclassrec.a
+    	#ranlib libclassrec.a
 
 recursived: $(BASIC).o $(REC).o
 	gcc -shared -Wall $(BASIC).o $(REC).o -o libclassrec.so
