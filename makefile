@@ -23,11 +23,11 @@ mainr.o: main.c recursives recursived
 
 loops: $(BASIC).o $(LOOP).o
 	ar rc libclassloops.a $(BASIC).o $(LOOP).o -o libclassloops.a
-	ranlib libclassloops.a
+	#ranlib libclassloops.a
 
 recursives: $(BASIC).o $(REC).o
-	ar rc libclassrec.a $(BASIC).o $(REC).o
-	ranlib libclassrec.a
+	ar rc libclassrec.a $(BASIC).o $(REC).o -o libclassrec.a
+	#ranlib libclassrec.a
 
 recursived: $(BASIC).o $(REC).o
 	gcc -shared -Wall $(BASIC).o $(REC).o -o libclassrec.so
