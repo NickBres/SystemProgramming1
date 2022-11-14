@@ -9,8 +9,6 @@ int isPalindrome(int num){
 int isArmstrong(int num){
     int len,sum;
 
-    if(num < 0) num *= -1;
-
     len = lengthRec(num);
     sum = ArmstrongRec(num,len);
     

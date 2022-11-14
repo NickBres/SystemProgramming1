@@ -3,8 +3,6 @@
 int isArmstrong(int num){
     int len,n,sum,temp;
 
-    if(num < 0) num *= -1;
-
     sum = 0;
     n = num;
     len = length(num);
