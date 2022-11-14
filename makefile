@@ -7,7 +7,7 @@ REC = advancedClassificationRecursion
 all: loops recursives recursived loopd mains maindloop maindrec
 
 loops: $(BASIC).o $(LOOP).o
-	ar rc libclassloops.a $(BASIC).o $(LOOP).o
+	ar rc libclassloops.a $(BASIC).o $(LOOP).o -o libclassloops.a
 	ranlib libclassloops.a
 
 recursives: $(BASIC).o $(REC).o
