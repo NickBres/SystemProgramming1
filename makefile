@@ -31,9 +31,9 @@ maindloop: mainl.o $(BASIC).o $(LOOP).o  loopd
 maindrec: mainr.o $(BASIC).o $(REC).o recursived
 	gcc  mainr.o  $(BASIC).o $(REC).o -o maindrec
 
-mainl.o: main.c
+mainl.o: main.c loops loopd
 	gcc -Wall -c main.c -L. -lclassloops -o mainl.o
-mainr.o: main.c
+mainr.o: main.c recursives recursived
 	gcc -Wall -c main.c -L. -lclassrec -o mainr.o	
 
 $(BASIC).o: $(BASIC).c
