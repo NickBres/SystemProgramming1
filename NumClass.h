@@ -24,5 +24,45 @@ is equeal to the original number. 145 = 1!+4!+5!
 */
 int isStrong(int);
 
+/*recursion function
+get number and its lenght
+return Armstrong sum*/
+int ArmstrongRec(int,int);
+
+/*recursion power function
+get two nubers
+returns first number power second*
+*/
+int powRec(int,int);
+
+/*recursion length function
+get number
+return its lenght
+*/
+int lengthRec(int);
+
+/*recursion reverse function
+get number and 0
+return it reversed
+123 -> 321*/
+int reverseRec(int,int);
+
+/*get number
+return it reversed
+123 -> 321*/
+int reverse(int);
+
+/*get two nubers
+returns first number power second*/
+int power(int,int);
+
+/*get number
+return its lenght*/
+int length(int);
+
+/*get positive number
+return its factorial*/
+int factorial(int);
+
 
 #endif

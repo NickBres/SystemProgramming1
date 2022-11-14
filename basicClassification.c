@@ -1,11 +1,10 @@
 #include "NumClass.h"
 
-int factorial(int);
-
 int isPrime(int num){
     for(int i = 2; i < num; i++){
         if(num%i == 0) return FALSE;
     }
+
     return TRUE;
 };
 
@@ -22,12 +21,13 @@ int isStrong(int num){
 
     return sum == num ;
 };
-/*get positive number
-return its factorial*/
+
 int factorial(int num){
     int fact = 1;
+
     while(num > 0){
         fact *= num--;
     }
+
     return fact;
 };
