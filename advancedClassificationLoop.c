@@ -37,7 +37,7 @@ int power(int a,int b){
 int length(int num){
     int len = 0;
 
-    while(num>0){
+    while(num > 0){
         len++;
         num = num/10;
     }
