@@ -9,12 +9,12 @@ OBJECTSREC = basicClassification.o advancedClassificationRecursion.o
 all: loops recursives recursived loopd mains maindloop maindrec
 
 #-------extraction files-------
-mains: mainl.o $(OBJECTSLOOP) 
-	$(CC)  mainl.o  $(OBJECTSLOOP) -L. -lclassloops -o mains
-maindloop: mainl.o $(OBJECTSLOOP)  
-	$(CC)  mainl.o  $(OBJECTSLOOP) -L. -lclassloops -o maindloop
-maindrec: mainr.o $(OBJECTSREC) 
-	$(CC)  mainr.o  $(OBJECTSREC) -L. -lclassrec -o maindrec
+mains: mainl.o libclassloops.a
+	$(CC)  mainl.o   -L. -lclassloops -o mains
+maindloop: mainl.o libclassloops.so
+	$(CC)  mainl.o   -L. -lclassloops -o maindloop
+maindrec: mainr.o  libclassrec.so
+	$(CC)  mainr.o  -L. -lclassrec -o maindrec
 #------------------------------
 
 
