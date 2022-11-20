@@ -6,26 +6,20 @@ CFILESREC = basicClassification.c advancedClassificationRecursion.c
 OBJECTSLOOP = basicClassification.o advancedClassificationLoop.o
 OBJECTSREC = basicClassification.o advancedClassificationRecursion.o
 
-all: loops recursives recursived loopd mains maindloop maindrec
+all:  mains maindloop maindrec loops recursives recursived loopd
 
 #-------extraction files-------
-mains: mainl.o libclassloops.a
-	$(CC)  mainl.o   -L. -lclassloops -o mains
-maindloop: mainl.o libclassloops.so
-	$(CC)  mainl.o   -L. -lclassloops -o maindloop
-maindrec: mainr.o  libclassrec.so
-	$(CC)  mainr.o  -L. -lclassrec -o maindrec
+mains: main.o libclassloops.a
+	$(CC)  main.o  -L. -lclassloops -o mains
+maindloop: main.o libclassloops.so
+	$(CC)  main.o  -L. -lclassloops -o maindloop
+maindrec: main.o libclassloops.so
+	$(CC)  main.o  -L. -lclassrec -o maindrec
 #------------------------------
 
 
-#-------main o files-------
-mainl.o: main.c
-	$(CC) $(CFLAGS) -c $^ -o $@
-mainr.o: main.c
-	$(CC) $(CFLAGS) -c $^ -o $@
-#------------------------------
 
-#-------other o files-------
+#------- o files-------
 %.o:%.c
 	$(CC) $(CFLAGS) -c $^ -o $@	
 #------------------------------
