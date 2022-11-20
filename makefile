@@ -10,19 +10,19 @@ all: loops recursives recursived loopd mains maindloop maindrec
 
 #-------extraction files-------
 mains: mainl.o $(OBJECTSLOOP) 
-	$(CC)  mainl.o  $(OBJECTSLOOP) -o mains
+	$(CC)  mainl.o  $(OBJECTSLOOP) -L. -lclassloops -o mains
 maindloop: mainl.o $(OBJECTSLOOP)  
-	$(CC)  mainl.o  $(OBJECTSLOOP) -o maindloop
+	$(CC)  mainl.o  $(OBJECTSLOOP) -L. -lclassloops -o maindloop
 maindrec: mainr.o $(OBJECTSREC) 
-	$(CC)  mainr.o  $(OBJECTSREC)  -o maindrec
+	$(CC)  mainr.o  $(OBJECTSREC) -L. -lclassrec -o maindrec
 #------------------------------
 
 
 #-------main o files-------
 mainl.o: main.c
-	$(CC) $(CFLAGS) -c $^ -L. -lclassloops -o $@
+	$(CC) $(CFLAGS) -c $^ -o $@
 mainr.o: main.c
-	$(CC) $(CFLAGS) -c $^ -L. -lclassrec -o $@
+	$(CC) $(CFLAGS) -c $^ -o $@
 #------------------------------
 
 #-------other o files-------
