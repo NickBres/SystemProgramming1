@@ -31,9 +31,9 @@ libclassrec.a: $(OBJECTSREC)
 
 #-------dynamic libraries-------
 libclassrec.so: $(OBJECTSREC) 
-	$(CC) -shared $(CFLAGS) $(OBJECTSREC)  -o $@
+	$(CC) -fPIC -shared $(CFLAGS) $(OBJECTSREC)  -o $@
 libclassloops.so: $(OBJECTSLOOP)
-	$(CC) -shared $(CFLAGS) $(OBJECTSLOOP) -o $@
+	$(CC) -fPIC -shared $(CFLAGS) $(OBJECTSLOOP) -o $@
 #------------------------------
 
 loops: libclassloops.a
