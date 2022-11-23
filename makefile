@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra 
+CFLAGS = -Wall -Wextra -fPIC
 
 CFILESLOOP = basicClassification.c advancedClassificationLoop.c
 CFILESREC = basicClassification.c advancedClassificationRecursion.c
@@ -31,9 +31,9 @@ libclassrec.a: $(OBJECTSREC)
 
 #-------dynamic libraries-------
 libclassrec.so: $(OBJECTSREC) 
-	$(CC) -fPIC -shared $(CFLAGS) $(OBJECTSREC)  -o $@
+	$(CC)  -shared $(CFLAGS) $(OBJECTSREC)  -o $@
 libclassloops.so: $(OBJECTSLOOP)
-	$(CC) -fPIC -shared $(CFLAGS) $(OBJECTSLOOP) -o $@
+	$(CC)  -shared $(CFLAGS) $(OBJECTSLOOP) -o $@
 #------------------------------
 
 loops: libclassloops.a
